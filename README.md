@@ -8,6 +8,7 @@ Check it out live: Artistly on Vercel
 ### Project Structure
 bash
 Copy code
+```
 .
 ├── app/
 │   ├── artists/              # Artist Listing Page
@@ -46,6 +47,7 @@ Copy code
 ├── styles/
 │   └── tailwind.config.js etc.
 
+```
 ## Getting Started
 1. Clone and install dependencies
 bash
