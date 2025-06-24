@@ -1,46 +1,23 @@
-#  Artistly – Performing Artist Booking Platform (Frontend Assignment)
+### Artistly – Performing Artist Booking Platform (Frontend Assignment)
+A mobile-responsive frontend demo of a performing artist booking platform built using Next.js (App Router), React, Tailwind CSS, shadcn/ui, and React Hook Form.
+Developed as part of a frontend assessment – ready to be integrated into a full-stack application.
 
-A full-stack-ready **frontend demo** of a performing artist booking platform built using **Next.js (App Router)**, **React**, **Tailwind CSS**, and **shadcn/ui**. This project was completed as part of a frontend assessment.
+### Live Demo
+Check it out live: Artistly on Vercel
 
----
-
-##  Live Demo
-
-[ Deployed on Vercel](https://your-deployment-url.vercel.app)
-
----
-
-##  Project Structure
-
-```bash
-# Artistly – Performing Artist Booking Platform (Frontend Assignment)
-
-A mobile-responsive, frontend-only demo for a performing artist booking platform built using **Next.js App Router**, **React**, **Tailwind CSS**, **shadcn/ui**, and **React Hook Form**.  
-It features dynamic filtering, onboarding forms, a dashboard, and shared global state management via Context API.
-
----
-
-##  Live Preview
-
-[ Deployed on Vercel](https://your-vercel-url.vercel.app)
-
----
-
-##  Project Structure
-
-```bash
+### Project Structure
+bash
+Copy code
 .
 ├── app/
 │   ├── artists/              # Artist Listing Page
-│   ├── dashboard/            # Manager Dashboard Page
-│   ├── onboarding/           # Artist Onboarding Page
-│   ├── favicon.ico
-│   ├── globals.css
+│   ├── dashboard/            # Manager Dashboard
+│   ├── onboarding/           # Artist Onboarding
 │   ├── layout.tsx            # App layout with providers
-│   └── page.tsx              # Homepage entry
+│   └── page.tsx              # Homepage
 │
 ├── assets/
-│   ├── images/               # Static images for UI
+│   ├── images/               # UI static assets
 │   └── artistsImages.ts      # Artist image imports
 │
 ├── components/
@@ -54,160 +31,129 @@ It features dynamic filtering, onboarding forms, a dashboard, and shared global 
 │       └── ManagerDashboard.tsx
 │
 ├── context/
-│   └── ArtistContext.tsx     # Global artist & booking state
+│   └── ArtistContext.tsx     # Global state for artists & bookings
 │
 ├── hooks/
 │   └── useDebounce.ts        # Custom hook for debounced search
 │
 ├── lib/
-│   ├── dummyData.ts          # Sample artist & booking JSON data
-│   └── utils.ts              # Utility functions (if any)
+│   ├── dummyData.ts          # Mocked data
+│   └── utils.ts              # Utility functions
 │
 ├── public/
-│   └── placeholder.svg       # Optional assets
+│   └── placeholder.svg
 │
 ├── styles/
-│   └── (tailwind.config etc.)
+│   └── tailwind.config.js etc.
 
-
-
-Getting Started
+## Getting Started
 1. Clone and install dependencies
 bash
 Copy code
 git clone https://github.com/your-username/artistly.git
 cd artistly
 npm install
-
-2. Run the app locally
+2. Run the development server
 bash
 Copy code
 npm run dev
-Technologies Used
-Tech	Purpose
-Next.js (v13+)	React framework with App Router support
-React	Component architecture
+### Tech Stack
+Technology	Purpose
+Next.js (v13+)	App Router, file-based routing, optimized SSR
+React	Component-based UI rendering
 Tailwind CSS	Utility-first styling
-shadcn/ui	Modern accessible UI component library
-React Hook Form + Zod	Form handling with validation and schema safety
-Context API	Global state management for artists and bookings
-Vercel	Deployment platform for frontend apps
+shadcn/ui	Accessible UI components
+React Hook Form	Declarative form management
+Zod	Schema-based form validation
+Context API	Lightweight global state for artists & filters
+Vercel	Fast deployment and hosting
 
- Key Features
- Homepage
-Platform overview
+# Key Features
+### Homepage
+Overview of the platform
 
 CTA to explore artists
 
-Artist category highlights
+Category highlights
 
-Artist Listing Page
-Dynamic filters: Category, Location, Price Range
+### Artist Listing
+Filter by category, location, price range
 
-Search with debounced input
+Debounced search input
 
-Grid/List toggle
+Grid/List view toggle
 
-Context-powered global state filtering
+Global filter state via Context
 
-Artist Onboarding Form
-Multi-section form
+### Artist Onboarding Form
+Multi-step form with image upload
 
-React Hook Form + Zod validation
+Validated with React Hook Form + Zod
 
-Multi-select checkboxes and dropdowns
+Multi-select dropdowns and checkboxes
 
-Profile image upload with preview
+Adds new artist to shared global state
 
-New artist is added to global state (via Context)
+### Manager Dashboard
+Tabbed view for stats, bookings, artists
 
-Manager Dashboard
 Artist overview table
 
-Booking requests tab
+Booking management (mocked)
 
-Stats cards (artists, revenue, growth)
+Reusable UI components
 
-Tabbed layout with reusable components
-
-Conditional rendering and mock booking actions
-
-Advanced Concepts Used
+## Advanced Concepts
 1. Global State with Context API
-ArtistContext.tsx manages shared state across pages (artists, bookings, filters)
+ArtistContext.tsx manages shared data (artists, bookings, filters)
 
-addArtist and setFilters demonstrate isolated state updates
+addArtist and setFilters enable modular updates
 
 2. Debounced Search Input
-useDebounce custom hook prevents over-filtering while typing
+Custom useDebounce hook avoids excessive filtering on input
 
-Keeps performance smooth
+3. Modular Components
+Used shadcn/ui to build reusable Cards, Tables, Tabs, etc.
 
-3. Reusability & Component Modularity
-Used shadcn/ui for consistent styling
+4. Schema Validation with Zod
+Ensures form input safety
 
-Custom Card, Badge, Table, Select, and Tabs
+Immediate error feedback
 
-4. Form Validation with Zod
-Declarative schema validation
+5. Dark Theme Support
+Fully styled for light/dark theme toggling
 
-Inline error feedback for better UX
+### Testing (Optional)
+While no test suite is included, the project is structured to easily integrate:
 
-5. Implemented Dark Theme
+Jest
 
-Dummy Data
-All data is mocked via dummyData.ts in /lib. No real API is connected, and all logic assumes simulated backend.
+React Testing Library
 
-Components Overview
-Component	Role
-ArtistOnboardingForm	Multi-step form to register a new artist
-ManagerDashboard	Lists all artists and mock bookings
-ArtistListing	Displays artists in grid/list mode with filters
-useDebounce	Custom hook for search input debounce
-ArtistContext	Global provider of artists, bookings, and filters
+### Deployment Instructions
+Push your code to a GitHub repo
 
+Connect the repo on vercel.com
 
-Why These Technologies?
-Next.js (App Router): Enables file-based routing, SSR, and optimized rendering.
+Deploy using default settings
 
-Tailwind CSS: Clean utility classes reduce boilerplate styling.
+Live link: https://your-app.vercel.app
 
-shadcn/ui: Headless accessible components ready for styling with Tailwind.
+# Dummy Data
+All data is mocked via /lib/dummyData.ts – there is no backend or API integration.
 
-React Hook Form + Zod: Fast, declarative, and typesafe form handling.
+## Component Overview
+Component	Description
+ArtistOnboardingForm	Multi-step registration form
+ManagerDashboard	Dashboard with stats and booking overview
+ArtistListing	Filterable artist list (grid/list toggle)
+useDebounce	Debounced search functionality
+ArtistContext	Global provider for artists/bookings/filters
 
-Context API: Lightweight global state management without Redux.
-
-Running Tests (Optional)
-bash
-Copy code
-# No test suite yet, but structure allows for Jest/React Testing Library
-Deployment Instructions
-Push code to GitHub
-
-Connect repo on vercel.com
-
-Deploy with default Next.js settings
-
-Share:
-
-https://your-app.vercel.app
-
-Temporary Vercel login if required
-
-Acknowledgements
-shadcn/ui
-
-Tailwind UI
-
-Lucide Icons
-
-Next.js Docs
-
-Author
+## Author
 Amit Kumar Gupta
+
 LinkedIn
+
 GitHub
 
-Feedback & Suggestions
-Feel free to open issues or reach out on email!
