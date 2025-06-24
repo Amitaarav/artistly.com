@@ -31,7 +31,7 @@ export function ArtistListing() {
 
       return matchesSearch && matchesCategory && matchesLocation && matchesPriceRange
     })
-  }, [artists,searchTerm, selectedCategory, selectedLocation, selectedPriceRange])
+  }, [artists,debounceSearchTerm, selectedCategory, selectedLocation, selectedPriceRange])
 
   const categories = [...new Set(artists.flatMap((artist) => artist.category))]
   const locations = [...new Set(artists.map((artist) => artist.location))]
