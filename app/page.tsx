@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Navbar } from "@/components/HomepageComponents/headersection/Navbar";
 import { HomePage }from "@/components/HomepageComponents/herosection/homepage";
 import { FooterSection } from "@/components/HomepageComponents/footersection/footer";

@@ -6,6 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "./ui/badge"
 import { Button } from "./ui/button";
 import { useArtistContext } from "@/context/ArtistContext"
+
 export const ManagerDashboard = () => {
 
     const { artists, bookings} = useArtistContext() 
@@ -19,7 +20,7 @@ export const ManagerDashboard = () => {
     },
     {
       title: "Active Bookings",
-      value: bookings.filter((req: any) => req.status === "pending").length,
+      value: bookings.filter((req) => req.status === "pending").length,
       icon: Calendar,
       color: "text-green-600",
       bgColor: "bg-green-100",

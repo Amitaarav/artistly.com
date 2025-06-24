@@ -111,6 +111,7 @@ export function ArtistOnboardingForm() {
       setSelectedImage(null)
       setImagePreview(null)
     } catch (error) {
+      console.error("Error submitting form:", error)
       Toaster({
         title: "Error",
         description: "Something went wrong. Please try again.",
