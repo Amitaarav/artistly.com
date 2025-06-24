@@ -17,6 +17,7 @@ import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, For
 import { Upload, User, Tag, Camera } from "lucide-react"
 import { Toaster } from "@/components/ui/sonner"
 import { useArtistContext } from "@/context/ArtistContext"
+import Image from "next/image"
 
 
 const formSchema = z.object({
@@ -351,7 +352,7 @@ export function ArtistOnboardingForm() {
                 <div className="flex flex-col items-center space-y-4">
                   {imagePreview ? (
                     <div className="relative">
-                      <img
+                      <Image
                         src={imagePreview || "/placeholder.svg"}
                         alt="Profile preview"
                         className="w-32 h-32 rounded-full object-cover border-4 border-gray-200"
