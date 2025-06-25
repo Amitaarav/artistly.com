@@ -18,6 +18,8 @@ import { Upload, User, Tag, Camera } from "lucide-react"
 import { Toaster } from "@/components/ui/sonner"
 import { useArtistContext } from "@/context/ArtistContext"
 import Image from "next/image"
+import { v4 as uuidv4 } from "uuid"
+import type { StaticImageData } from "next/image";
 
 
 const formSchema = z.object({
@@ -90,16 +92,18 @@ export function ArtistOnboardingForm() {
   const onSubmit = async (data: FormData) => {
     try {
         const newArtist = {
+        id: uuidv4(), // generate unique id
         name: data.name,
         bio: data.bio,
-        categories: data.categories,
+        category: data.categories, // rename key to match expected type
         languages: data.languages,
         priceRange: data.priceRange,
         location: data.location,
         email: data.email,
         phone: data.phone,
-        profileImage: selectedImage,
-      } as any;
+        rating: 0, // default rating
+        image: selectedImage as unknown as StaticImageData, // TEMP fix: casting File to image type
+        };
 
       addArtist(newArtist);
 
