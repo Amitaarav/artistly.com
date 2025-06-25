@@ -92,17 +92,17 @@ export function ArtistOnboardingForm() {
   const onSubmit = async (data: FormData) => {
     try {
         const newArtist = {
-        id: uuidv4(), // generate unique id
+        id: uuidv4(),
         name: data.name,
         bio: data.bio,
-        category: data.categories, // rename key to match expected type
+        category: data.categories,
         languages: data.languages,
         priceRange: data.priceRange,
         location: data.location,
         email: data.email,
         phone: data.phone,
-        rating: 0, // default rating
-        image: selectedImage as unknown as StaticImageData, // TEMP fix: casting File to image type
+        rating: 0,
+        image: selectedImage as unknown as StaticImageData, 
         };
 
       addArtist(newArtist);
@@ -276,7 +276,7 @@ export function ArtistOnboardingForm() {
                     </FormItem>
                   )}
                 />
-
+        {/* Language */}
                 <FormField
                   control={form.control}
                   name="languages"
@@ -314,7 +314,7 @@ export function ArtistOnboardingForm() {
                     </FormItem>
                   )}
                 />
-
+            {/* Fee Range */}
                 <FormField
                   control={form.control}
                   name="priceRange"

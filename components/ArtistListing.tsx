@@ -11,6 +11,7 @@ import Image from "next/image"
 import { dummyArtists } from "@/lib/dummyData"
 import { useArtistContext } from "@/context/ArtistContext"
 import { useDebounce } from "@/hooks/useDebounce"
+
 type ViewMode = "grid" | "list"
 
 export function ArtistListing() {
