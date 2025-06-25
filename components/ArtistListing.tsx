@@ -8,10 +8,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Badge } from "@/components/ui/badge"
 import { MapPin, Star, Filter, Grid, List, IndianRupeeIcon } from "lucide-react"
 import Image from "next/image"
-import { dummyArtists } from "@/lib/dummyData"
 import { useArtistContext } from "@/context/ArtistContext"
 import { useDebounce } from "@/hooks/useDebounce"
-
 type ViewMode = "grid" | "list"
 
 export function ArtistListing() {
@@ -160,7 +158,7 @@ export function ArtistListing() {
         {/* Results Count */}
         <div className="mb-6 px-2">
           <p className="text-gray-200">
-            Showing {filteredArtists.length} of {dummyArtists.length} artists
+            Showing {filteredArtists.length} of {artists.length} artists
           </p>
         </div>
 
@@ -216,7 +214,7 @@ export function ArtistListing() {
           ))}
         </div>
 
-        {/* No Results */}
+        {/* clear filters if no result found */}
         {filteredArtists.length === 0 && (
           <div className="text-center py-12">
             <p className="text-gray-500 text-lg">No artists found matching your criteria.</p>
